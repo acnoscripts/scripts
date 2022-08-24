@@ -261,9 +261,11 @@ function Library:Window(title)
 			
 			script.Parent.MouseButton1Click:Connect(function()
 				if script.Parent.Off.Visible = false
-					script.Parent.On.Visible = true
-				else 
+					script.Parent.On.Visible = false
 					script.Parent.Off.Visible = true
+				else 
+					script.Parent.Off.Visible = false
+					script.Parent.On.Visible = true
 				end
 			end)
 		end

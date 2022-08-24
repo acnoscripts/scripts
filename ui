@@ -260,12 +260,18 @@ function Library:Window(title)
 			local script = Instance.new('Script', Toggle)
 			
 			script.Parent.MouseButton1Click:Connect(function()
-				if script.Parent.Off.Visible = true
-					script.Parent.On.Visible = true
+				if script.Parent.Off.Rotation == 0 then
+					script.Parent.On.Rotation = 0
+					game:GetService("TweenService"):Create(script.Parent.Off, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 360}):Play();
+					wait(0.3)
 					script.Parent.Off.Visible = false
-				else 
-					script.Parent.Off.Visible = true
+					script.Parent.On.Visible = true
+				else
+					script.Parent.Off.Rotation = 0
+					game:GetService("TweenService"):Create(script.Parent.On, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = -360}):Play();
+					wait(0.3)
 					script.Parent.On.Visible = false
+					script.Parent.Off.Visible = true
 				end
 			end)
 		end

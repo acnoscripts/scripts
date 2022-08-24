@@ -260,12 +260,12 @@ function Library:Window(title)
 			local script = Instance.new('Script', Toggle)
 			
 			script.Parent.MouseButton1Click:Connect(function()
-				if script.Parent.Off.Visible = false
-					script.Parent.On.Visible = false
-					script.Parent.Off.Visible = true
-				else 
-					script.Parent.Off.Visible = false
+				if script.Parent.Off.Visible = true
 					script.Parent.On.Visible = true
+					script.Parent.Off.Visible = false
+				else 
+					script.Parent.Off.Visible = true
+					script.Parent.On.Visible = false
 				end
 			end)
 		end
